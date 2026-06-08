@@ -8,35 +8,24 @@ body{
 .navbar{
   display:flex;
   justify-content:space-around;
-  background:#111;
   padding:15px;
+  background:#111;
+}
+
+button{
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
 }
 
 .container{
   padding:20px;
 }
 
-.search-box{
-  display:flex;
-  gap:10px;
-}
-
-.search-box input{
-  flex:1;
+#searchInput{
+  width:70%;
   padding:12px;
-  border:none;
   border-radius:10px;
-}
-
-.search-box button{
-  padding:12px 20px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-#results{
-  margin-top:20px;
 }
 
 .diagram-image{
