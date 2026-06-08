@@ -26,11 +26,11 @@ function sendSearch() {
     `;
   });
 
-  chat.innerHTML += html;
+  // ✅ FIX: safer update
+  chat.insertAdjacentHTML("beforeend", html);
 
-  // CLEAR INPUT BOX (your request)
   input.value = "";
 
-  // AUTO SCROLL LIKE CHATGPT
+  // auto scroll
   chat.scrollTop = chat.scrollHeight;
 }
