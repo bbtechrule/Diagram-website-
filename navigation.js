@@ -1,11 +1,14 @@
 function showHome() {
-  alert("Home Page");
+  document.getElementById("results").innerHTML =
+    "<h2>Search Biology Diagrams</h2>";
 }
 
 function showVideos() {
-  alert("Videos Page");
+  document.getElementById("results").innerHTML =
+    "<h2>Videos Page (Coming Soon)</h2>";
 }
 
 function showProfile() {
-  alert("Profile Page");
+  document.getElementById("results").innerHTML =
+    "<h2>Profile Page (Coming Soon)</h2>";
 }
