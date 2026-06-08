@@ -14,11 +14,17 @@
 
   <div class="navbar">
 
-    <div>Home</div>
+    <button onclick="showHome()">
+      Home
+    </button>
 
-    <div>Videos</div>
+    <button onclick="showVideos()">
+      Videos
+    </button>
 
-    <div>Profile</div>
+    <button onclick="showProfile()">
+      Profile
+    </button>
 
   </div>
 
@@ -26,24 +32,21 @@
 
     <h1>Diagram Search</h1>
 
-    <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search Diagram..."
+    >
 
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search Diagram..."
-      >
-
-      <button onclick="searchDiagram()">
-        Search
-      </button>
-
-    </div>
+    <button onclick="searchDiagram()">
+      Search
+    </button>
 
     <div id="results"></div>
 
   </div>
 
+  <script src="navigation.js"></script>
   <script src="diagrams.js"></script>
 
 </body>
