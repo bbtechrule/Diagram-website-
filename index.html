@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diagram Website</title>
 
   <link rel="stylesheet" href="style.css">
@@ -12,6 +11,7 @@
 
 <body>
 
+  <!-- Navigation -->
   <div class="navbar">
 
     <button onclick="showHome()">
@@ -28,9 +28,15 @@
 
   </div>
 
-  <div class="container">
+  <!-- Results Area -->
+  <div id="results">
 
-    <h1>Diagram Search</h1>
+    <h2>Search Biology Diagrams</h2>
+
+  </div>
+
+  <!-- Bottom Search Bar -->
+  <div class="search-container">
 
     <input
       type="text"
@@ -39,15 +45,15 @@
     >
 
     <button onclick="searchDiagram()">
-      Search
+      Send
     </button>
-
-    <div id="results"></div>
 
   </div>
 
+  <!-- JavaScript Files -->
   <script src="navigation.js"></script>
   <script src="diagrams.js"></script>
 
 </body>
+
 </html>
