@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Diagram Website</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="navbar">
+
+    <div>Home</div>
+
+    <div>Videos</div>
+
+    <div>Profile</div>
+
+  </div>
+
+  <div class="container">
+
+    <h1>Diagram Search</h1>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Diagram..."
+      >
+
+      <button onclick="searchDiagram()">
+        Search
+      </button>
+
+    </div>
+
+    <div id="results"></div>
+
+  </div>
+
+  <script src="diagrams.js"></script>
+
+</body>
+</html>
