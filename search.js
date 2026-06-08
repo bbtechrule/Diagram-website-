@@ -11,33 +11,47 @@ function sendSearch() {
     item.title.toLowerCase().includes(text)
   );
 
-  let block = `<div class="message-block">`;
+  let block = document.createElement("div");
+  block.className = "message-block";
 
-  block += `<div class="message"><b>You searched:</b> ${text}</div>`;
+  // 👉 TEXT FIRST (TOP)
+  let textDiv = document.createElement("div");
+  textDiv.className = "message";
+  textDiv.innerHTML = `<b>You searched:</b> ${text}`;
 
+  block.appendChild(textDiv);
+
+  // 👉 IF NOT FOUND
   if (found.length === 0) {
-    block += `<div class="message">No diagram found ❌</div>`;
+    let noDiv = document.createElement("div");
+    noDiv.className = "message";
+    noDiv.innerHTML = "No diagram found ❌";
+    block.appendChild(noDiv);
   }
 
+  // 👉 IMAGES BELOW TEXT
   found.forEach(item => {
-    block += `
-      <div class="message">
-        <h3>${item.title}</h3>
-        <img src="${item.image}" class="diagram-image">
-      </div>
+
+    let wrap = document.createElement("div");
+    wrap.className = "message";
+
+    wrap.innerHTML = `
+      <h3>${item.title}</h3>
+      <img src="${item.image}" class="diagram-image">
     `;
+
+    block.appendChild(wrap);
   });
 
-  block += `</div>`;
-
   // 👉 ADD NEW BLOCK AT BOTTOM
-  chat.innerHTML += block;
+  chat.appendChild(block);
 
+  // clear input
   input.value = "";
 
-  // 👉 SCROLL TO NEW SEARCH (bottom)
-  chat.scrollTo({
-    top: chat.scrollHeight,
-    behavior: "smooth"
+  // 👉 SCROLL SMOOTHLY TO NEW BLOCK (NOT IMAGE)
+  block.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
   });
 }
