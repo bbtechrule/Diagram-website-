@@ -11,14 +11,16 @@ function sendSearch() {
     item.title.toLowerCase().includes(text)
   );
 
-  let html = `<div class="message"><b>You searched:</b> ${text}</div>`;
+  let block = `<div class="message-block">`;
+
+  block += `<div class="message"><b>You searched:</b> ${text}</div>`;
 
   if (found.length === 0) {
-    html += `<div class="message">No diagram found ❌</div>`;
+    block += `<div class="message">No diagram found ❌</div>`;
   }
 
   found.forEach(item => {
-    html += `
+    block += `
       <div class="message">
         <h3>${item.title}</h3>
         <img src="${item.image}" class="diagram-image">
@@ -26,11 +28,16 @@ function sendSearch() {
     `;
   });
 
-  // ✅ FIX: safer update
-  chat.insertAdjacentHTML("beforeend", html);
+  block += `</div>`;
+
+  // 👉 ADD NEW BLOCK AT BOTTOM
+  chat.innerHTML += block;
 
   input.value = "";
 
-  // auto scroll
-  chat.scrollTop = chat.scrollHeight;
+  // 👉 SCROLL TO NEW SEARCH (bottom)
+  chat.scrollTo({
+    top: chat.scrollHeight,
+    behavior: "smooth"
+  });
 }
