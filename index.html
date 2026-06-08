@@ -11,34 +11,31 @@
 
 <body>
 
-  <!-- Navigation -->
+  <!-- NAVBAR -->
   <div class="navbar">
-
     <button onclick="showHome()">Home</button>
-
     <button onclick="showVideos()">Videos</button>
-
     <button onclick="showProfile()">Profile</button>
-
   </div>
 
-  <!-- Results Area -->
+  <!-- RESULTS -->
   <div id="results">
     <h2>Search Biology Diagrams</h2>
   </div>
 
-  <!-- Bottom Search Bar -->
+  <!-- SEARCH BAR -->
   <div class="search-container">
 
-    <input type="text" id="searchInput" placeholder="Search Diagram...">
+    <input type="text" id="searchInput" placeholder="Search Diagram..." oninput="searchDiagram()">
 
     <button onclick="searchDiagram()">Send</button>
 
   </div>
 
-  <!-- JS Files -->
+  <!-- JS FILES (ORDER IMPORTANT) -->
   <script src="navigation.js"></script>
-  <script src="diagrams.js"></script>
+  <script src="diagrams-data.js"></script>
+  <script src="search.js"></script>
 
 </body>
 </html>
