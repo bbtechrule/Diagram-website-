@@ -4,38 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagram Website</title>
+  <title>ZeroToOne Diagram Search</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <button onclick="showHome()">Home</button>
-    <button onclick="showVideos()">Videos</button>
-    <button onclick="showProfile()">Profile</button>
-  </div>
+  <!-- CHAT AREA -->
+  <div id="chat"></div>
 
-  <!-- RESULTS -->
-  <div id="results">
-    <h2>Search Biology Diagrams</h2>
-  </div>
-
-  <!-- SEARCH BAR -->
+  <!-- INPUT BAR -->
   <div class="search-container">
 
-    <input type="text" id="searchInput" placeholder="Search Diagram..." oninput="searchDiagram()">
+    <input type="text" id="searchInput" placeholder="Search diagram...">
 
-    <button onclick="searchDiagram()">Send</button>
+    <button onclick="sendSearch()">Send</button>
 
   </div>
 
-  <!-- JS FILES (ORDER IMPORTANT) -->
-  <script src="navigation.js"></script>
   <script src="diagrams-data.js"></script>
   <script src="search.js"></script>
 
 </body>
+
 </html>
