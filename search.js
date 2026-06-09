@@ -14,14 +14,12 @@ function sendSearch() {
   let block = document.createElement("div");
   block.className = "message-block";
 
-  // 👉 TEXT FIRST (TOP)
   let textDiv = document.createElement("div");
   textDiv.className = "message";
   textDiv.innerHTML = `<b>You searched:</b> ${text}`;
 
   block.appendChild(textDiv);
 
-  // 👉 IF NOT FOUND
   if (found.length === 0) {
     let noDiv = document.createElement("div");
     noDiv.className = "message";
@@ -29,7 +27,6 @@ function sendSearch() {
     block.appendChild(noDiv);
   }
 
-  // 👉 IMAGES BELOW TEXT
   found.forEach(item => {
 
     let wrap = document.createElement("div");
@@ -43,13 +40,14 @@ function sendSearch() {
     block.appendChild(wrap);
   });
 
-  // 👉 ADD NEW BLOCK AT BOTTOM
   chat.appendChild(block);
 
-  // clear input
+  // Clear search box
   input.value = "";
 
-  // 👉 SCROLL SMOOTHLY TO NEW BLOCK (NOT IMAGE)
+  // Close mobile keyboard
+  input.blur();
+
   block.scrollIntoView({
     behavior: "smooth",
     block: "start"
