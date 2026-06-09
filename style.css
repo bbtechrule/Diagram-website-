@@ -65,3 +65,26 @@ button {
   border: none;
   cursor: pointer;
 }
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  background: #1f1f1f;
+
+  color: white;
+  font-size: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #333;
+  cursor: pointer;
+
+  z-index: 1000;
+}
