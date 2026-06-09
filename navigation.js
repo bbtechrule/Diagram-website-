@@ -12,3 +12,6 @@ function showProfile() {
   document.getElementById("results").innerHTML =
     "<h2>Profile Page (Coming Soon)</h2>";
 }
+function openMenu() {
+  alert("Menu clicked");
+}
