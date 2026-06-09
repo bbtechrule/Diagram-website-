@@ -21,9 +21,11 @@ function sendSearch() {
   block.appendChild(textDiv);
 
   if (found.length === 0) {
+
     let noDiv = document.createElement("div");
     noDiv.className = "message";
     noDiv.innerHTML = "No diagram found ❌";
+
     block.appendChild(noDiv);
   }
 
@@ -45,7 +47,7 @@ function sendSearch() {
   // Clear search box
   input.value = "";
 
-  // Close mobile keyboard
+  // Close keyboard after Send
   input.blur();
 
   block.scrollIntoView({
@@ -53,3 +55,48 @@ function sendSearch() {
     block: "start"
   });
 }
+
+/* ==========================
+   CLOSE KEYBOARD WHEN
+   REACHING FIRST RESULT
+========================== */
+
+const chat = document.getElementById("chat");
+const input = document.getElementById("searchInput");
+
+chat.addEventListener("scroll", () => {
+
+  if (chat.scrollTop <= 30) {
+    input.blur();
+  }
+
+});
+
+/* ==========================
+   CLOSE KEYBOARD WHEN
+   DRAGGING SEARCH BAR DOWN
+========================== */
+
+const searchBox =
+  document.querySelector(".search-container");
+
+let startY = 0;
+
+searchBox.addEventListener("touchstart", (e) => {
+
+  startY = e.touches[0].clientY;
+
+});
+
+searchBox.addEventListener("touchmove", (e) => {
+
+  let currentY =
+    e.touches[0].clientY;
+
+  if (currentY - startY > 30) {
+
+    input.blur();
+
+  }
+
+});
